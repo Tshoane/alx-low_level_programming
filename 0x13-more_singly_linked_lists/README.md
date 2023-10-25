@@ -1,96 +1,65 @@
-# C - More Singly Linked Lists
+# Dog Struct and Functions
 
-This project is part of the Holberton School curriculum and focuses on expanding your knowledge and skills related to singly linked lists in C.
+This C program defines a `struct dog` data type and provides functions to initialize, print, create, and free dogs. The project is inspired by quotes about dogs.
 
-## Directory Structure
-- `Tests/`: Directory containing test files.
-- `lists.h`: Header file containing function prototypes.
-- `0-print_listint.c`: C function to print all elements of a listint_t linked list and return the number of nodes.
-- `1-listint_len.c`: C function to return the number of elements in a listint_t linked list.
-- `2-add_nodeint.c`: C function to add a new node at the beginning of a listint_t linked list.
-- `3-add_nodeint_end.c`: C function to add a new node at the end of a listint_t linked list.
-- `4-free_listint.c`: C function to free a listint_t linked list.
-- `5-free_listint2.c`: C function to free a listint_t linked list and set the head to NULL.
-- `6-pop_listint.c`: C function to delete the head node of a listint_t linked list and return its data (n).
-- `7-get_nodeint.c`: C function to locate a given node in a listint_t linked list.
-- `8-sum_listint.c`: C function to return the sum of all data (n) in a listint_t linked list.
-- `9-insert_nodeint.c`: C function to insert a new node at a given position in a listint_t linked list.
-- `10-delete_nodeint.c`: C function to delete a node at a given index in a listint_t linked list.
-- `100-reverse_listint.c`: C function to reverse a listint_t linked list using a single loop.
-- `101-print_listint_safe.c`: C function to print a listint_t linked list safely and return the number of nodes.
-- `102-free_listint_safe.c`: C function to free a listint_t linked list safely and return the size of the list that was freed.
-- `103-find_loop.c`: C function to find a loop in a listint_t linked list and return the starting node's address.
+## Table of Contents
 
-## Project Tasks
+- [Overview](#overview)
+- [Tasks](#tasks)
+  - [Task 0: Define a New Type `struct dog`](#task-0-define-a-new-type-struct-dog)
+  - [Task 1: Initialize a `struct dog`](#task-1-initialize-a-struct-dog)
+  - [Task 2: Print a `struct dog`](#task-2-print-a-struct-dog)
+  - [Task 3: Define a New Type `dog_t`](#task-3-define-a-new-type-dog_t)
+  - [Task 4: Create a New Dog](#task-4-create-a-new-dog)
+  - [Task 5: Free Dogs](#task-5-free-dogs)
+- [Usage](#usage)
+- [Quotes](#quotes)
 
-### 0. Print list (0-print_listint.c)
-- Description: C function to print all elements of a listint_t linked list and return the number of nodes.
-- File: `0-print_listint.c`
+## Overview
 
-### 1. List length (1-listint_len.c)
-- Description: C function to return the number of elements in a listint_t linked list.
-- File: `1-listint_len.c`
+This C program provides a `struct dog` definition and a set of functions to work with `struct dog` instances. These functions include initializing, printing, creating, and freeing dogs. The program uses quotes about dogs to add context and inspiration to the tasks.
 
-### 2. Add node (2-add_nodeint.c)
-- Description: C function to add a new node at the beginning of a listint_t linked list. If the function fails, it returns NULL; otherwise, it returns the address of the new element.
-- File: `2-add_nodeint.c`
+## Tasks
 
-### 3. Add node at the end (3-add_nodeint_end.c)
-- Description: C function to add a new node at the end of a listint_t linked list. If the function fails, it returns NULL; otherwise, it returns the address of the new element.
-- File: `3-add_nodeint_end.c`
+### Task 0: Define a New Type `struct dog`
 
-### 4. Free list (4-free_listint.c)
-- Description: C function to free a listint_t linked list.
-- File: `4-free_listint.c`
+Define a new data type `struct dog` with the following elements:
 
-### 5. Free (5-free_listint2.c)
-- Description: C function to free a listint_t linked list and set the head to NULL.
-- File: `5-free_listint2.c`
+- `name`, type = `char *`
+- `age`, type = `float`
+- `owner`, type = `char *`
 
-### 6. Pop (6-pop_listint.c)
-- Description: C function to delete the head node of a listint_t linked list. If the linked list is empty, it returns 0; otherwise, it returns the head node's data (n).
-- File: `6-pop_listint.c`
+### Task 1: Initialize a `struct dog`
 
-### 7. Get node at index (7-get_nodeint.c)
-- Description: C function to locate a given node of a listint_t linked list. If the node does not exist, it returns NULL; otherwise, it returns the located node.
-- File: `7-get_nodeint.c`
+Write a function to initialize a variable of type `struct dog`. The prototype is as follows:
 
-### 8. Sum list (8-sum_listint.c)
-- Description: C function to return the sum of all data (n) of a listint_t linked list. If the linked list is empty, it returns 0; otherwise, it returns the sum of all data (n).
-- File: `8-sum_listint.c`
+```c
+void init_dog(struct dog *d, char *name, float age, char *owner);
+Task 2: Print a struct dog
+Write a function that prints the contents of a struct dog. The prototype is as follows:
 
-### 9. Insert (9-insert_nodeint.c)
-- Description: C function to insert a new node to a listint_t linked list at a given position. If it is not possible to add the new node at index idx or the function fails, it returns NULL; otherwise, it returns the address of the new node.
-- File: `9-insert_nodeint.c`
+c
+Copy code
+void print_dog(struct dog *d);
+If an element of d is NULL, print (nil) instead of that element.
+Task 3: Define a New Type dog_t
+Define a new type dog_t as an alias for the type struct dog.
 
-### 10. Delete at index (10-delete_nodeint.c)
-- Description: C function to delete the node at a given index of a listint_t linked list. If the function succeeds, it returns 1; if it fails, it returns -1.
-- File: `10-delete_nodeint.c`
+Task 4: Create a New Dog
+Write a function that creates a new dog and returns a pointer to it. The prototype is as follows:
 
-### 11. Reverse list (100-reverse_listint.c)
-- Description: C function to reverse a listint_t linked list using a maximum of one loop and two variables. Returns a pointer to the first node of the reversed list.
-- File: `100-reverse_listint.c`
+c
+Copy code
+dog_t *new_dog(char *name, float age, char *owner);
+You must store a copy of name and owner.
+Return NULL if the function fails.
+Task 5: Free Dogs
+Write a function to free the memory allocated for a dog. The prototype is as follows:
 
-### 12. Print (safe version) (101-print_listint_safe.c)
-- Description: C function to print a listint_t linked list safely (i.e., can free lists containing loops) and return the number of nodes.
-- File: `101-print_listint_safe.c`
-
-### 13. Free (safe version) (102-free_listint_safe.c)
-- Description: C function to free a listint_t linked list safely (i.e., can free lists containing loops) and return the size of the list that was freed. Sets the head to NULL.
-- File: `102-free_listint_safe.c`
-
-### 14. Find the loop (103-find_loop.c)
-- Description: C function to find the loop contained in a listint_t linked list using a maximum of two variables. If no loop is found, it returns NULL; otherwise, it returns the address of the node where the loop starts.
-- File: `103-find_loop.c`
-
-## Usage
-
-To use these functions, include the `lists.h` header in your C code and implement the functions as needed for your application.
-
-## Contributing
-
-Contributions to this project are welcome! If you have suggestions or improvements, please open an issue or create a pull request.
-
-## License
-
-This project is licensed under the MIT License
+c
+Copy code
+void free_dog(dog_t *d);
+Usage
+Clone this repository.
+Compile the C program using your preferred C compiler.
+Run the compiled program to see the functions in action.
