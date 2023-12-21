@@ -1,10 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_delete - Deletes a hash table
- * @ht: Hash table
+ * hash_table_delete - deletes a hash table
  *
- * Return: No return
+ * @ht: pointer to the hash table
+ * Return: no return
  */
 void hash_table_delete(hash_table_t *ht)
 {
@@ -14,10 +14,11 @@ void hash_table_delete(hash_table_t *ht)
 
 	if (ht == NULL)
 		return;
+
 	for (i = 0; i < ht->size; i++)
 	{
 		tmp1 = ht->array[i];
-		while((tmp2 = tmp1) != NULL)
+		while ((tmp2 = tmp1) != NULL)
 		{
 			tmp1 = tmp1->next;
 			free(tmp2->key);
